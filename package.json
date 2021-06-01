@@ -1,6 +1,6 @@
 {
   "name": "sportfolio",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -24,5 +24,21 @@
     "passport-google-oauth20": "^2.0.0",
     "path": "^0.12.7",
     "redis": "^3.1.2"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trundler-dev/sandboxportfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trundler-dev/sandboxportfolio/issues"
+  },
+  "homepage": "https://github.com/trundler-dev/sandboxportfolio#readme",
+  "description": ""
 }

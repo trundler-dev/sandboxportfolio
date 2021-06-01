@@ -9,7 +9,11 @@
 <div class="container">
     <h2><a href="/">s&portfolio</a></h2>
     <h2><a href="#">Explore</a></h2>
-    <h2><a href="/auth/sso">Sign In</a></h2>
+    {{# if userState.isRegistered }}
+        <h2><a href="/user/{{userState.username}}">My Profile</a></h2>
+    {{else}}
+        <h2><a href="/auth/sso">Sign In</a></h2>
+    {{/if}}
 </div>
 
 {{{body}}}

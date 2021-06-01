@@ -40,19 +40,20 @@
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   max-width: max-content;
   border-radius: 1rem;
+  box-sizing: border-box;
+  margin: 5px;
+  padding: 10px;
 }
 
-.text-container > p {
-  padding-left: 10px;
-  padding-right: 10px;
+.portfolio-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
 }
 
-.text-container > p:first-child {
-  padding-top: 10px;
-}
-
-.text-container > p:last-child {
-  padding-bottom: 10px;
+.portfolio-header > h1,h3 {
+  padding: 10px;
 }
 
 body {

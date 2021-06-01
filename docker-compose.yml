@@ -15,6 +15,7 @@ services:
       context: .
     container_name: sportfolio-app
     restart: unless-stopped
+    command: npm run dev
     environment:
       - REDIS_CONNECT_STRING=redis://sportfolio-redis:6379/0
       - REDIS_SESSION_CONNECT_STRING=redis://sportfolio-redis:6379/1
@@ -24,9 +25,10 @@ services:
       - SESSION_LENGTH=2147000
     ports:
       - 3000:3000
+      - 9229:9229
     volumes:
-      - ./public:/usr/src/app/public
-      - ./var:/usr/src/app/var
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
     depends_on:
       - sportfolio-mongo
       - sportfolio-redis

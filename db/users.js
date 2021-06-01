@@ -45,6 +45,13 @@ class Users {
         });
     }
 
+    async findUserByName(username) {
+        const sdb = await this.db.get();
+        return sdb.collection('users').findOne({
+            username: username
+        })
+    }
+
     async deleteUserById(id) {
         const sdb = await this.db.get();
         // TODO: implement user delete

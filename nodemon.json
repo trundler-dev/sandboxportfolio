@@ -1,0 +1,4 @@
+{
+  "watch": ["bin/www", "./"],
+  "ext": "js, css, hbs"
+}
