@@ -1,0 +1,66 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.container > h2 {
+  background-color: #2170fe;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 1rem;
+  max-width: max-content;
+}
+
+.container > h2 > a {
+  color: azure;
+  text-decoration: none;
+}
+
+.sso-button {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  background-color: azure;
+  color: black;
+  border: 1px solid black;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+}
+
+.sso-button > img {
+  vertical-align: middle;
+}
+
+.text-container {
+  background-color: azure;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  max-width: max-content;
+  border-radius: 1rem;
+}
+
+.text-container > p {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.text-container > p:first-child {
+  padding-top: 10px;
+}
+
+.text-container > p:last-child {
+  padding-bottom: 10px;
+}
+
+body {
+  padding: 50px;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: lightsteelblue;
+}
+
+a {
+  text-decoration: none;
+}

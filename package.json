@@ -1,0 +1,28 @@
+{
+  "name": "sportfolio",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "connect-redis": "^5.2.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^10.0.0",
+    "express": "~4.16.1",
+    "express-handlebars": "^5.3.2",
+    "express-session": "^1.17.2",
+    "fs": "0.0.1-security",
+    "hbs": "^4.1.2",
+    "http-errors": "~1.6.3",
+    "mongo": "^0.1.0",
+    "mongodb": "^3.6.9",
+    "morgan": "~1.9.1",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "path": "^0.12.7",
+    "redis": "^3.1.2"
+  }
+}

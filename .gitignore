@@ -1,0 +1,7 @@
+node_modules/
+var/
+error/
+
+*.log
+.env
+.idea/
