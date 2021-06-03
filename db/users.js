@@ -52,10 +52,29 @@ class Users {
         })
     }
 
+    async updatePortfolio(id, portfolio) {
+        const sdb = await this.db.get();
+        return sdb.collection('users').updateOne({
+            _id: id
+        },
+        {
+            $set: {
+                portfolio: portfolio
+            }
+        });
+    }
+
     async deleteUserById(id) {
         const sdb = await this.db.get();
-        // TODO: implement user delete
-        return undefined;
+
+        const userExists = await sdb.collection('users').findOne({
+            _id: new ObjectId(id)
+        });
+        if (userExists) {
+            await sdb.collection('users').deleteOne({
+                _id: new ObjectId(id)
+            });
+        }
     }
 }
 

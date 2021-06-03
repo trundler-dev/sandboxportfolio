@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('../config/passport');
 const users = require('../db/users');
+const { check, validationResult, body } = require('express-validator');
 
 router.get('/sso', (req, res, next) => {
     res.render('auth');
@@ -43,6 +44,44 @@ router.post('/register', (req, res, next) => {
             res.redirect('/');
         })
         .catch(next);
+});
+
+router.get('/manage', (req, res, next) => {
+    if (!res.locals.userState.isLoggedIn) {
+        res.redirect('/login');
+    } else {
+        const data = {};
+        if (req.session && req.session.errors) {
+            data.errors = req.session.errors;
+            req.session.errors = [];
+        }
+        res.render('manage', data);
+    }
+});
+
+router.post('/delete',
+    [
+        body(
+            'delete-check',
+            'To delete your account please check the confirmation box.'
+        ).exists()
+    ], (req, res, next) => {
+        if (res.locals.userState.isRegistered) {
+            const errors = validationResult(req);
+            if (!errors.isEmpty()) {
+                req.session.errors = errors.array();
+                res.redirect('/auth/manage');
+            } else {
+                users.deleteUserById(req.user.id)
+                    .then(() => {
+                        req.session.destroy();
+                        res.redirect('/');
+                    })
+                    .catch(next);
+            }
+        } else {
+            res.redirect('/');
+        }
 });
 
 module.exports = router

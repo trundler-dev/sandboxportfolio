@@ -1,0 +1,16 @@
+<h1>Manage Account</h1>
+<div class="text-container">
+    {{#each errors}}
+        {{msg}}
+    {{/each}}
+    <p>
+        If you want to delete your account, check the box below and click Delete Account.
+        Your account and all content associated with it will be deleted forever. You can sign back up at any time.
+    </p>
+
+    <form method="post" action="/auth/delete">
+        <input type="checkbox" name="delete-check" id="delete-check">
+        <label>I wish to delete my account.</label>
+        <button type="submit" name="submit">Delete Account</button>
+    </form>
+</div>

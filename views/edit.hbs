@@ -1,0 +1,11 @@
+<h1>Edit Portfolio</h1>
+<div class="text-container">
+    <p>
+        Below you can edit your portfolio.
+        The text editor takes in <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>.
+    </p>
+    <form method="post" action="/user/{{username}}/edit">
+        <textarea rows="4" cols="50" name="portfolio" id="portfolio" maxlength="2000"></textarea>
+        <button type="submit" name="submit">Update</button>
+    </form>
+</div>
