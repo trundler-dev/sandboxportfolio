@@ -1,8 +1,15 @@
-<div class="container">
+<div class="nav">
     <div class="text-container">
         <p>
-            Welcome to s&portfolio!<br>
-            On this site you can create your own portfolio with ease.</p>
-        <p><a href="/auth/sso"><b>Sign up</b></a> to get started. It only takes a few seconds!</p>
+            Welcome to s&portfolio!
+            Looking for work or workers in the s&box community? This may be the right site for you.
+            You can create your own portfolio by signing up. Or, click Explore to see other people's portfolios.
+            Sort by work type and search for keywords to find the perfect user for your project.
+        </p>
+        {{#if userState.isLoggedIn}}
+
+        {{else}}
+            <p style="text-align: center;"><a href="/auth/sso"><b>Sign up</b></a> to get started. It only takes a few seconds!</p>
+        {{/if}}
     </div>
 </div>
