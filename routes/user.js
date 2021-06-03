@@ -21,7 +21,10 @@ async function loadUser(username) {
     result.pageTitle = user.username + "'s Portfolio";
     result.username = user.username
     result.shareUrl = 'https://sandboxportfolio.com/user/' + user.username;
-    result.portfolio = md.render(user.portfolio);
+    if (user.portfolio) {
+        result.portfolio = md.render(user.portfolio);
+        result.portfolioRaw = user.portfolio;
+    }
     console.log(user);
     return result;
 }

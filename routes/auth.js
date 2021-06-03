@@ -59,6 +59,11 @@ router.get('/manage', (req, res, next) => {
     }
 });
 
+router.get('/logout', (req, res, next) =>  {
+    req.session.destroy();
+    res.redirect('/');
+});
+
 router.post('/delete',
     [
         body(

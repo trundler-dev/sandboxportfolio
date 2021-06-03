@@ -56,7 +56,7 @@
 .portfolio-container {
   display: flex;
   flex-wrap: wrap;
-  width: 50%;
+  max-width: 50%;
   justify-content: center;
   background-color: azure;
   border-radius: 1rem;
@@ -65,9 +65,7 @@
   padding: 10px;
 }
 
-.portfolio-content {
-
-}
+.portfolio-content >
 
 .portfolio-header > h1,h3 {
   padding: 10px;

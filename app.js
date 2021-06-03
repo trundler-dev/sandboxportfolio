@@ -10,6 +10,7 @@ const appState = require('./helpers/middleware/app-state');
 const indexRouter = require('./routes/index');
 const authRouter = require('./routes/auth');
 const userRouter = require('./routes/user');
+const exploreRouter = require('./routes/explore');
 
 const app = express();
 
@@ -41,6 +42,7 @@ app.use(appState);
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/user', userRouter);
+app.use('/explore', exploreRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

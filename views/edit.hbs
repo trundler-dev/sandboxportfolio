@@ -5,7 +5,7 @@
         The text editor takes in <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>.
     </p>
     <form method="post" action="/user/{{username}}/edit">
-        <textarea rows="4" cols="50" name="portfolio" id="portfolio" maxlength="2000"></textarea>
+        <textarea rows="4" cols="50" name="portfolio" id="portfolio" maxlength="2000">{{portfolioRaw}}</textarea>
         <button type="submit" name="submit">Update</button>
     </form>
 </div>
