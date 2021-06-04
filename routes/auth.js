@@ -5,7 +5,7 @@ const users = require('../db/users');
 const { check, validationResult, body } = require('express-validator');
 
 router.get('/sso', (req, res, next) => {
-    res.render('auth');
+    res.render('auth', { pageTitle: 'Sign In' });
 });
 
 router.get('/google', passport.authenticate('google', {
@@ -18,7 +18,7 @@ router.get('/google/redirect', passport.authenticate('google'), (req, res, next)
 
 router.get('/register', (req, res, next) => {
     if (!res.locals.userState.isLoggedIn) {
-        res.redirect('/login');
+        res.redirect('/auth/sso');
     } else {
         users.findUserById(req.user.id)
             .then((user) => {
@@ -48,7 +48,7 @@ router.post('/register', (req, res, next) => {
 
 router.get('/manage', (req, res, next) => {
     if (!res.locals.userState.isLoggedIn) {
-        res.redirect('/login');
+        res.redirect('/auth/sso');
     } else {
         const data = {};
         if (req.session && req.session.errors) {

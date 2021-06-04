@@ -1,0 +1,44 @@
+services:
+  sportfolio-proxy:
+    image: nginx:latest
+    container_name: sportfolio-proxy
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/webserver-prod.conf:/etc/nginx/conf.d/default.conf
+      - ./public:/var/www/webroot
+      - ./error:/var/www/error
+      - /etc/ssl/sportfolio:/etc/ssl/sportfolio
+  sportfolio-app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile-prod
+    container_name: sportfolio-app
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    ports:
+      - 3000:3000
+    volumes:
+      - ./public:/usr/src/app/public
+    depends_on:
+      - sportfolio-mongo
+      - sportfolio-redis
+  sportfolio-redis:
+    container_name: sportfolio-redis
+    restart: always
+    image: redis:6.2.3
+    volumes:
+      - /opt/sportfolio-redis-data:/data
+    ports:
+      - 6379:6379
+  sportfolio-mongo:
+    container_name: sportfolio-mongo
+    restart: always
+    image: mongo:latest
+    volumes:
+      - /opt/sportfolio-mongo-data:/data/db
+    ports:
+      - 27017:27017
