@@ -82,6 +82,6 @@ a {
   text-decoration: none;
 }
 
-.portfolio-container div, .portfolio-container img {
+.portfolio-container > div, .portfolio-container img {
     max-width: 100%;
 }
