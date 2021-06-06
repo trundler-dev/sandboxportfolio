@@ -60,11 +60,12 @@
   flex-wrap: wrap;
   max-width: 50%;
   justify-content: center;
-  background-color: azure;
+  background-color: white;
   border-radius: 1rem;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 10px;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-header > h1, .portfolio-header > h3 {
@@ -74,9 +75,13 @@
 body {
   padding: 50px;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: lightsteelblue;
+  background-color: #e6e6e6;
 }
 
 a {
   text-decoration: none;
+}
+
+.portfolio-container > div, .portfolio-container img {
+    max-width: 100%;
 }
