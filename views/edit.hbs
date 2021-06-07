@@ -1,11 +1,16 @@
-<h1>Edit Portfolio</h1>
+<h1 class="text-header">Edit Portfolio</h1>
 <div class="text-container">
     <p>
         Below you can edit your portfolio.
         The text editor takes in <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>.
     </p>
     <form method="post" action="/user/{{username}}/edit">
-        <textarea rows="4" cols="50" name="portfolio" id="portfolio" maxlength="2000">{{portfolioRaw}}</textarea>
-        <button type="submit" name="submit">Update</button>
+        <textarea class="text-area" name="portfolio" id="portfolio" maxlength="2000">{{portfolioRaw}}</textarea>
+        <button class="submit-button" type="submit" name="submit">Update</button>
     </form>
+    <hr>
+    <h2>Delete Your Account</h2>
+    <p>
+        Click <a href="/auth/manage">here</a> to delete your account.
+    </p>
 </div>
