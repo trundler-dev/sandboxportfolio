@@ -4,6 +4,31 @@ const passport = require('../config/passport');
 const users = require('../db/users');
 const { check, validationResult, body } = require('express-validator');
 
+const registrationValidation = [
+    body(
+        'username',
+        'Usernames must be between 3 and 30 characters long.'
+    )
+        .isLength({min: 3, max: 30}),
+    body(
+        'username',
+        'Usernames can only have letters and numbers.'
+    )
+        .matches(/^[A-Za-z0-9]+$/),
+    body(
+        'username',
+        'That username is already taken. Please choose a different one.'
+    )
+        .custom((value) => {
+            return users.findUserByName(value)
+                .then((user) => {
+                    if (user) {
+                        return Promise.reject();
+                    }
+                });
+        })
+];
+
 router.get('/sso', (req, res, next) => {
     res.render('auth', { pageTitle: 'Sign In' });
 });
@@ -36,14 +61,24 @@ router.get('/register', (req, res, next) => {
     }
 });
 
-router.post('/register', (req, res, next) => {
+router.post('/register', registrationValidation, (req, res, next) => {
     const username = req.body.username;
+    const errors = validationResult(req);
+    console.log(errors);
 
-    users.setRegistered(username, req.user.id)
-        .then(() => {
-            res.redirect('/');
-        })
-        .catch(next);
+    if (!errors.isEmpty()) {
+        req.session.errors = errors.array();
+        req.session.registrationForm = {
+            username: req.body.username
+        };
+        res.redirect('/auth/register');
+    } else {
+        users.setRegistered(username, req.user.id)
+            .then(() => {
+                res.redirect('/');
+            })
+            .catch(next);
+    }
 });
 
 router.get('/manage', (req, res, next) => {

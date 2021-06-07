@@ -46,7 +46,7 @@ router.get('/:username', (req, res, next) => {
 
 router.get('/:username/edit', (req, res, next) => {
     if (!res.locals.userState.isLoggedIn) {
-        res.redirect('/login');
+        res.redirect('/auth/sso');
     }
     if (!res.locals.userState.isRegistered || req.user.username !== req.params.username) {
         res.redirect('/');

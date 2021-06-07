@@ -1,13 +1,19 @@
-<h1>Create An Account</h1>
+<h1 class="text-header">Create An Account</h1>
 <div class="text-container">
+    {{#each errors}}
+        <div class="error">
+            {{msg}}
+        </div>
+    {{/each}}
     <p>
         By creating an account you will gain access to portfolio creation tools.<br>
-        You can delete your account at any time.</p>
+        You can delete your account at any time.
+    </p>
     <form method="post" action="/auth/register">
         <label for="username">Username</label>
         <input type="text" name="username" id="username" maxlength="20"
                placeholder="Enter a username" value="{{username}}">
-        <button class="button-submit" type="submit" name="submit">Submit</button>
+        <button class="submit-button" type="submit" name="submit">Submit</button>
     </form>
 
 </div>

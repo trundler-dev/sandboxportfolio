@@ -8,15 +8,15 @@
 
 .nav > h2 {
   background-color: #2170fe;
-  font-size: 30px;
+  font-size: 2rem;
   padding: 10px;
   margin: 5px;
-  border-radius: 1rem;
+  border-radius: .55rem;
   max-width: max-content;
 }
 
 .nav > h2 > a {
-  color: azure;
+  color: white;
   text-decoration: none;
 }
 
@@ -25,7 +25,7 @@
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
-  background-color: azure;
+  background-color: white;
   color: black;
   border: 1px solid black;
   padding: .375rem .75rem;
@@ -38,14 +38,29 @@
   vertical-align: middle;
 }
 
+.text-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+}
+
 .text-container {
-  background-color: azure;
+  background-color: white;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
   border-radius: 1rem;
   box-sizing: border-box;
   max-width: 1100px;
   margin: 0 auto;
   padding: 10px;
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+}
+
+.text-area {
+  width: 95%;
+  min-height: 200px;
+  font-size: 1.2rem;
+  padding: 5px;
 }
 
 .portfolio-header {
@@ -70,6 +85,22 @@
 
 .portfolio-header > h1, .portfolio-header > h3 {
   padding: 10px;
+}
+
+.submit-button {
+  display: inline-block;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: .2rem .5rem;
+  margin: 1rem;
+  background-color: #e6e6e6;
+}
+
+.error {
+  padding: .75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: .25rem;
+  background-color: #f8d7da;
 }
 
 body {
