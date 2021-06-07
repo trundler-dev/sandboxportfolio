@@ -14,7 +14,6 @@ Fork and clone the repository. You can build the app locally:
 docker-compose up -d --build
 ```
 You can access the website from `localhost` in your browser.
-Pull requests should be made from your fork to origin/develop.
+Pull requests should be made from your fork to origin/develop.  
+For more detailed setup, see the [wiki](https://github.com/trundler-dev/sandboxportfolio/wiki/Setting-Up-Your-Local-Environment).
 
-### Usage
-Work In Progress
