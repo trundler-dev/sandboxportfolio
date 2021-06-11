@@ -29,8 +29,12 @@ async function loadUser(username) {
     if (user.summary) {
         result.summary = user.summary;
     }
-    result.userTags = userTags.filter(n => !user.tags.includes(n));
-    result.activeTags = user.tags;
+    if ('tags' in user) {
+        result.userTags = userTags.filter(n => !user.tags.includes(n));
+        result.activeTags = user.tags;
+    } else {
+        result.userTags = userTags;
+    }
     return result;
 }
 
