@@ -1,11 +1,29 @@
 <h1 class="text-header">Edit Portfolio</h1>
 <div class="text-container">
+    <h2>Portfolio Content</h2>
     <p>
         Below you can edit your portfolio.
         The text editor takes in <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>.
     </p>
     <form method="post" action="/user/{{username}}/edit">
-        <textarea class="text-area" name="portfolio" id="portfolio" maxlength="2000">{{portfolioRaw}}</textarea>
+        <textarea class="text-area" name="portfolio" id="portfolio" maxlength="4000">{{portfolioRaw}}</textarea>
+        <h2>Portfolio Summary</h2>
+        <p>
+            Give yourself a summary that will appear in the Explore tab.
+        </p>
+        <textarea class="text-area" name="summary" id="summary" maxlength="75">{{summary}}</textarea>
+        <h2>Portfolio Tags</h2>
+        <p>
+            Assign yourself tags to show what kind of work you do.
+        </p>
+        {{#each userTags}}
+            <input type="checkbox" name="tag_{{this}}" id="tag_{{this}}">
+            <label for="tag_{{this}}">{{this}}</label>
+        {{/each}}
+        {{#each activeTags}}
+            <input type="checkbox" name="tag_{{this}}" id="tag_{{this}}" checked>
+            <label for="tag_{{this}}">{{this}}</label>
+        {{/each}}
         <button class="submit-button" type="submit" name="submit">Update</button>
     </form>
     <hr>

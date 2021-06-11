@@ -103,6 +103,36 @@
   background-color: #f8d7da;
 }
 
+.explore-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.explore-element {
+  background-color: white;
+  margin: 10px;
+  padding: 1rem;
+  border-radius: .4rem;
+  color: inherit;
+  max-width: 20%;
+}
+
+.explore-element-tags-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.explore-element-tags {
+  background-color: #2170fe;
+  color: white;
+  width: min-content;
+  margin: 5px;
+  padding: 5px;
+  font-size: .75rem;
+}
+
 body {
   padding: 50px;
   font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;

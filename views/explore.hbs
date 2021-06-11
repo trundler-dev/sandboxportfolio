@@ -1,1 +1,16 @@
 <h1 class="text-header">Explore</h1>
+<div class="explore-block">
+{{#each users}}
+    <a class="explore-element" href="/user/{{username}}">
+        <h2>{{username}}</h2>
+        <p>{{summary}}</p>
+        <div class="explore-element-tags-block">
+            {{#each tags}}
+                <div class="explore-element-tags">
+                    {{this}}
+                </div>
+            {{/each}}
+        </div>
+    </a>
+{{/each}}
+</div>

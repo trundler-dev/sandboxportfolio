@@ -52,14 +52,16 @@ class Users {
         })
     }
 
-    async updatePortfolio(id, portfolio) {
+    async updatePortfolio(id, portfolio, summary, tags) {
         const sdb = await this.db.get();
         return sdb.collection('users').updateOne({
             _id: id
         },
         {
             $set: {
-                portfolio: portfolio
+                portfolio: portfolio,
+                summary: summary,
+                tags: tags
             }
         });
     }
