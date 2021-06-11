@@ -12,7 +12,8 @@ class Explore {
         return sdb.collection('users').aggregate(
             {
                 $match: {
-                    username: { $exists: true }
+                    username: { $exists: true },
+                    summary: { $exists: true, $ne: "" }
                 }
             },
             {
