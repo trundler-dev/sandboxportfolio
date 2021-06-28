@@ -1,3 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root{
+  --accent-color: #2170FE; 
+  --box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
+
+  --bg-color: #e6e6e6;
+  --txt-color: black;
+  --high-contrast-bg: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg-color: #2b2931;
+    --txt-color: white;
+    --high-contrast-bg: rgb(28, 27, 31);
+  }
+}
+
+body {
+  padding: 50px;
+  font: 16px 'poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+  overflow: overlay;
+}
 .nav {
   display: flex;
   flex-wrap: wrap;
@@ -6,17 +32,27 @@
   padding-bottom: 10px;
 }
 
-.nav > h2 {
-  background-color: #2170fe;
+.nav h2 {
+  background-color: var(--accent-color);
   font-size: 2rem;
   padding: 10px;
   margin: 5px;
   border-radius: .55rem;
   max-width: max-content;
+  box-shadow: var(--box-shadow);
+  transition: transform 100ms;
 }
 
-.nav > h2 > a {
+.nav h2:hover{
+  transform: translateY(-.5rem);
+}
+
+.nav > a {
   color: white;
+  text-decoration: none;
+}
+
+.nav > a:hover{
   text-decoration: none;
 }
 
@@ -46,27 +82,36 @@
 }
 
 .text-container {
-  background-color: white;
-  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: var(--high-contrast-bg);
+  line-height: 1.2;
   border-radius: 1rem;
   box-sizing: border-box;
   max-width: 1100px;
   margin: 0 auto;
   padding: 10px;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
+  border: .5em solid var(--accent-color);
+  text-align: center;
 }
 
 .text-area {
+  border-radius: .5rem;
+  border: 1px solid var(--txt-color);
+  outline: none;
   width: 95%;
   min-height: 200px;
   font-size: 1.2rem;
   padding: 5px;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+  resize: vertical;
+  overflow: visible;
 }
 
 .portfolio-header {
   display: flex;
   flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   justify-content: center;
 }
 
@@ -75,12 +120,13 @@
   flex-wrap: wrap;
   max-width: 50%;
   justify-content: center;
-  background-color: white;
+  background-color: var(--high-contrast-bg);
   border-radius: 1rem;
   box-sizing: border-box;
   margin: 0 auto;
   padding: 10px;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
+  border: .5em solid var(--accent-color);
 }
 
 .portfolio-header > h1, .portfolio-header > h3 {
@@ -93,14 +139,17 @@
   font-size: 1rem;
   padding: .2rem .5rem;
   margin: 1rem;
-  background-color: #e6e6e6;
+  background-color: var(--txt-color);
+  color: var(--bg-color);
+  border: 0;
+  border-radius: 2px;
 }
 
 .error {
   padding: .75rem 1.25rem;
   margin-bottom: 1rem;
   border-radius: .25rem;
-  background-color: #f8d7da;
+  background-color: var(--high-contrast-bg);
 }
 
 .explore-block {
@@ -110,12 +159,19 @@
 }
 
 .explore-element {
-  background-color: white;
+  background-color: var(--accent-color);
   margin: 10px;
   padding: 1rem;
   border-radius: .4rem;
-  color: inherit;
+  color: white;
   max-width: 20%;
+  box-shadow: var(--box-shadow);
+  transition: transform 150ms;
+}
+
+.explore-element:hover{
+  transform: translateY(-.5rem);
+  text-decoration: none;
 }
 
 .explore-element-tags-block {
@@ -125,24 +181,41 @@
 }
 
 .explore-element-tags {
-  background-color: #2170fe;
-  color: white;
+  background-color: white;
+  color: var(--accent-color);
+  border-radius: 2px;
   width: min-content;
   margin: 5px;
   padding: 5px;
   font-size: .75rem;
 }
 
-body {
-  padding: 50px;
-  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #e6e6e6;
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--accent-color);
+  border-radius: 5px;
+  padding: 3px;
 }
 
-a {
-  text-decoration: none;
+a:hover{
+  text-decoration: underline;
 }
 
 .portfolio-container > div, .portfolio-container img {
-    max-width: 100%;
+    width: 100%;
+}
+
+
+.portfolio-container > div{
+  padding: 0 10px;
+}
+
+.portfolio-container > div img{
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+}
+
+hr{
+  border: 1px solid var(--txt-color);
 }
