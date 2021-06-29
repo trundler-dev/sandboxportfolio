@@ -219,3 +219,25 @@ a:hover{
 hr{
   border: 1px solid var(--txt-color);
 }
+
+input{
+  outline: none;
+  padding: .3rem;
+  border: 0;
+  background-color: var(--bg-color);
+  color: var(--txt-color);
+}
+
+@media only screen and (max-width: 766px) {
+  body {
+    padding: 0;
+  }
+  .explore-element{
+    max-width: 40%;
+    margin: 5px;
+    padding: 5px;
+  }
+  .portfolio-container{
+    max-width: 90%;
+  }
+}
