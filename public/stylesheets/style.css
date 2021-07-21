@@ -2,9 +2,9 @@
 
 :root{
   --accent-color: #2170FE; 
-  --box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
+  --box-shadow: 0 0 6px rgb(0, 0, 0, 0.5);
 
-  --bg-color: #e6e6e6;
+  --bg-color: #ffffff;
   --txt-color: black;
   --high-contrast-bg: white;
 }
@@ -167,6 +167,7 @@ body {
   max-width: 20%;
   box-shadow: var(--box-shadow);
   transition: transform 150ms;
+  overflow: hidden;
 }
 
 .explore-element:hover{
@@ -226,6 +227,13 @@ input{
   border: 0;
   background-color: var(--bg-color);
   color: var(--txt-color);
+}
+
+code{
+  background-color: black;
+  color: white;
+  padding: .2em;
+  border-radius: .3em;
 }
 
 @media only screen and (max-width: 766px) {
