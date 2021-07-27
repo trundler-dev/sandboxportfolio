@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>{{#if pageTitle}} {{pageTitle}} | {{/if}} s&portfolio </title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css'/>
 </head>
 <body>
 <div class="page-wrap">
 <div class="nav">
-    <h2><a href="/">s&portfolio</a></h2>
-    <h2><a href="/explore">Explore</a></h2>
+    <a href="/"><h2>s&portfolio</h2></a>
+    <a href="/explore"><h2>Explore</h2></a>
     {{# if userState.isRegistered }}
-        <h2><a href="/user/{{userState.username}}">My Profile</a></h2>
-        <h2><a href="/auth/logout">Sign Out</a></h2>
+        <a href="/user/{{userState.username}}"><h2>My Profile</h2></a>
+        <a href="/auth/logout"><h2>Sign Out</h2></a>
     {{else}}
-        <h2><a href="/auth/sso">Sign In</a></h2>
+        <a href="/auth/sso"><h2>Sign In</h2></a>
     {{/if}}
 </div>
 
